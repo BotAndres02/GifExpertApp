@@ -17,8 +17,6 @@ export const useFetchGifs = ( category:string ): FetchResult => {
         getImages();
     }, []);
 
-
-
     return {
         images,
         isLoading
