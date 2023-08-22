@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { getGifs } from '../helpers/getGifs';
+import { FetchResult } from './hooks.types';
 
-export const useFetchGifs = ( category ) => {
+export const useFetchGifs = ( category:string ): FetchResult => {
  
     const [images, setImages] = useState([]);
     const [isLoading, setIsLoading] = useState( true );
