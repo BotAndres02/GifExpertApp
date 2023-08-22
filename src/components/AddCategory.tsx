@@ -1,16 +1,16 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { ChangeEvent, FormEvent, useState } from 'react';
+import { AddCategoryProps } from './components.types';
 
 
-export const AddCategory = ({ onNewCategory }) => {
+export const AddCategory = ({ onNewCategory }: AddCategoryProps) => {
 
     const [ inputValue, setInputValue ] = useState('');
 
-    const onInputChange = ({ target }) => {
+    const onInputChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
         setInputValue( target.value );
     }
 
-    const onSubmit = ( event ) => {
+    const onSubmit = ( event: FormEvent ) => {
         event.preventDefault();
         if( inputValue.trim().length <= 1) return;
 
@@ -31,10 +31,6 @@ export const AddCategory = ({ onNewCategory }) => {
     )
 }
 
-AddCategory.propTypes = {
-    onNewCategory: PropTypes.func
-}
-    
 
 
 
